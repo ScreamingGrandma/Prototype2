@@ -6,6 +6,7 @@ public class MoveForward : MonoBehaviour
 {
     public float speed = 25.0f;
     private float topBoundary = 35.0f;
+    private float bottomBoundary = -25.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,10 @@ public class MoveForward : MonoBehaviour
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
 
         if (transform.position.z > topBoundary)
+        {
+            Destroy(gameObject);
+        }
+        else if (transform.position.z < bottomBoundary)
         {
             Destroy(gameObject);
         }
