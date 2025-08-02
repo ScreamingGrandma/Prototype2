@@ -24,6 +24,7 @@ public class MoveForward : MonoBehaviour
         }
         else if (transform.position.z < bottomBoundary)
         {
+            Debug.Log("Game Over");
             Destroy(gameObject);
         }
     }
